@@ -72,3 +72,8 @@ Voila!
 # Build CSS files on Save
 
 1. Go to Package Control -> Install Package -> SublimeBuildOnSave
+
+# Code Conventions
+
+- variable names are all lower-case, separating words within a var by a dash (e.g., `$hello-world`)
+

@@ -1,6 +1,9 @@
+$text-color: #222222;
+$header-height: 60px;
+
 body {
   font-family: sans-serif;
-  color: #000;
+  color: $text-color;
 }
 
 h1, h2, h3, h4 {
@@ -16,6 +19,7 @@ a {
 }
 
 #header {
+	height: $header-height;
 
   #main-menu {
 
