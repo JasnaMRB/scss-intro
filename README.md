@@ -39,3 +39,36 @@ Create a `style.scss` file with the following simple syntax, using a nested `p` 
 If running `sass --watch`, watch sass process this automatically into a valid CSS file!
 
 If building from Sublime Text, press Ctrl/Cmd + B!
+
+# Change Build System to put CSS files in CSS folder
+
+1. Go to Tools -> Build System -> New Build System...
+2. Paste this in:
+
+	{
+
+	  "cmd": ["sass", "--update", "$file:${file_path}/../css/${file_base_name}.css", "--stop-on-error", "--no-cache"],
+
+	  "osx":
+	  {
+	      "path": "/usr/local/bin:$PATH"
+	  },
+
+	  "windows":
+	  {
+	      "shell": "true"
+	  }
+
+	}
+
+3. Save as `Build to CSS Directory.sublime-build`
+4. Select Tools -> Build System -> Build to CSS Directory
+5. Create `css` and `scss` directories
+6. Move test `style.scss` file to `scss` folder
+7. Press Cmd + B
+
+Voila!
+
+# Build CSS files on Save
+
+1. Go to Package Control -> Install Package -> SublimeBuildOnSave
