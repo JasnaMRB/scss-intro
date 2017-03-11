@@ -15,8 +15,9 @@ I just want to track my commits and learning progress here.
 6. Install [Emmet](http://emmet.io) via Package Control for code completion
 7. Install Ruby via Terminal
 8. Install Sass via Terminal
+9. Set your Build System as Sass: Tools -> Build System -> Sass
 
-*** Seems to be for Sublime Text 2 only. As a workaround, follow the Sass website's instructions by running this snippet in Terminal in your project's directory:
+*** Alternatively, follow the Sass website's instructions by running this snippet in Terminal in your project's directory:
 
     sass --watch style.scss:style.css --style compact --no-cache
 
@@ -35,4 +36,6 @@ Create a `style.scss` file with the following simple syntax, using a nested `p` 
         }
     }
     
-Watch sass process this automatically into a valid CSS file!
+If running `sass --watch`, watch sass process this automatically into a valid CSS file!
+
+If building from Sublime Text, press Ctrl/Cmd + B!
