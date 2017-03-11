@@ -40,7 +40,7 @@ If running `sass --watch`, watch sass process this automatically into a valid CS
 
 If building from Sublime Text, press Ctrl/Cmd + B!
 
-# Change Build System to put CSS files in CSS folder
+## Change Build System to put CSS files in CSS folder
 
 1. Go to Tools -> Build System -> New Build System...
 2. Paste this in:
@@ -69,13 +69,25 @@ If building from Sublime Text, press Ctrl/Cmd + B!
 
 Voila!
 
-# Build CSS files on Save
+## Build CSS files on Save
 
 1. Go to Package Control -> Install Package -> SublimeBuildOnSave
+2. To ignore partials, go to Preferences -> Package Settings -> SublimeBuildOnSave -> User settings
+3. Add this:
+		{
+		    "filename_filter": "(/|\\\\|^)(?!_)(\\w+)\\.(css|js|sass|less|scss)$",
+		    "build_on_save": 1
+		}
+
+# Building Partials
+
+1. Name a new `.scss` file with prepender underscore '_'. This tells preprocessor not to make a CSS file out of this. 
+2. Add your variables to the file!
 
 # Code Conventions
 
 - Use variables especially for values that are used more than once.
 - Also just for readability and easy maintenance.
 - variable names are all lower-case, separating words within a var by a dash (e.g., `$hello-world`)
-
+- Use Partials to separate variables by category and from the rest of your styles.
+- Use Mixins for blocks of reusable styles.
