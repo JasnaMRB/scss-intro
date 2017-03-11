@@ -75,5 +75,7 @@ Voila!
 
 # Code Conventions
 
+- Use variables especially for values that are used more than once.
+- Also just for readability and easy maintenance.
 - variable names are all lower-case, separating words within a var by a dash (e.g., `$hello-world`)
 
