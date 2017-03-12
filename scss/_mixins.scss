@@ -1,3 +1,10 @@
+@mixin apply-to-ie-6 {
+	/* ie6-only shortcut */
+	* html {
+		@content;
+	}
+}
+
 @mixin warning {
 	background-color: orange;
 	color: white;
@@ -10,19 +17,27 @@
 	}
 }
 
-@mixin rounded {
-	border-radius: 6px;
+@mixin box-shadow($shadows...) {
+	box-shadow: $shadows;
+	-moz-box-shadow: $shadows;
+	-webkit-box-shadow: $shadows;
 }
 
-@mixin box {
+/** Add a parameter with default value
+**/
+@mixin rounded($radius: 6px) {
+	border-radius: $radius;
+}
+
+@mixin box($radius: 6px, $border: 1px solid #000) {
 	/* nesting mixins */
-	@include rounded;
-	border: 1px solid #333;
+	@include rounded(8px);
+	border: ($border);
 }
 
 @mixin fancy-links {
 	a {
 		font-style: italic;
-		text-decoration: italic;
+		text-decoration: none;
 	}
 }
