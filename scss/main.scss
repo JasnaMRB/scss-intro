@@ -1,5 +1,10 @@
-@import "variables";
-@import "mixins";
+/* 	alternatively, you can put on one line:
+ *
+ * 	@import "partials/variables", "partials/mixins"
+ *
+ */
+@import "partials/variables";
+@import "partials/mixins";
 
 /* applying at root level */
 @include fancy-links;
