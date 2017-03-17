@@ -5,6 +5,13 @@
 	}
 }
 
+@mixin google-font($font) {
+	/* 'unquote' is a built-in Sass function */
+	$font: unquote($font);
+	/* You can use this interpolation variable syntax only for CSS, not Sass or SCSS */
+	@import url(https://fonts.googleapis.com/css?family=#{$font})
+}
+
 @mixin warning {
 	background-color: orange;
 	color: white;

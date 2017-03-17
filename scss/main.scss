@@ -6,12 +6,20 @@
 @import "partials/variables";
 @import "partials/mixins";
 
+/** @import first; then @include **/
+
+@include google-font("Alegreya+Sans");
+@include google-font("Titillium+Web");
+
 /* applying at root level */
 @include fancy-links;
 
 body {
   font-family: $text-font;
   color: $text-color;
+  @media only screen and (max-width: 960px) {
+    font-size: 125%;
+  }
 }
 
 h1, h2, h3, h4 {
@@ -67,6 +75,10 @@ a {
 
 #main {
 	width: $content-width;
+	@media only screen and (max-width: 960px) {
+		width: auto;
+		max-width: $content-width;
+	}
 	// Center
 	margin-left: auto;
 	margin-right: auto;
