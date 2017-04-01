@@ -27,16 +27,13 @@ $contrast: hello;
 
 body {
   font-family: $text-font;
+  font-size: em(18px);
+  color: $text-color;
+  background-color: $body-background-color;
   @include large-screens {
     font-size: em(18px);
   }
-  @if $contrast == high {
-  	color: #000;
-  } @else if $contrast == low {
-  	color: #999;
-  } @else {
-  	color: $text-color;
-  }
+  
 
 }
 
@@ -156,7 +153,7 @@ a {
   		padding: em(16px) em(20px);
   		border-bottom:  1px dashed #999;
   		&:hover {
-  			background-color: #efefef;
+  			background-color: $menu-item-background-color;
   		}
   	}
   }

@@ -38,10 +38,10 @@
 }
 
 @mixin warning {
-	background-color: orange;
+	background-color: $warning-background-color;
 	color: white;
 	&:hover {
-		background-color: lighten(orange,  10%);
+		background-color: lighten($warning-background-color,  10%);
 	}
 }
 @mixin large-text {

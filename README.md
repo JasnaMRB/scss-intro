@@ -143,6 +143,28 @@ belly: [mixins vs. extends](https://tech.bellycard.com/blog/sass-mixins-vs-exten
 	}
 
 
+# `@if`, `@else if`, and `@else`
+
+	$contrast: hello; // results in @else
+	// $contrast: high -- results in #000
+	// $contrast: low -- results in #999
+
+	body {
+	  font-family: $text-font;
+	  @include large-screens {
+	    font-size: em(18px);
+	  }
+	  @if $contrast == high {
+	  	color: #000;
+	  } @else if $contrast == low {
+	  	color: #999;
+	  } @else {
+	  	color: $text-color;
+	  }
+
+	}
+
+This kind of stuff is great to use for multiple themes of a stylesheet, e.g., "Light", "Dark", "Default", "ClientX", "ClientY", "Ocean".
 # Popular Sass Frameworks/Toolkits
 
 - [Susy](http://susy.oddbird.net/) toolkits - flexible, highly customizable, lets you create your own grids
