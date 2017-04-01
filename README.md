@@ -107,3 +107,9 @@ Voila!
 
 Put in a `partials` file, e.g., `_functions.scss`.
 - [Strip Unit](https://css-tricks.com/snippets/sass/strip-unit-function/)
+
+# Popular Sass Frameworks/Toolkits
+
+- [Susy](http://susy.oddbird.net/) toolkits - flexible, highly customizable, lets you create your own grids
+- [Breakpoint](http://breakpoint-sass.com/) tool - helps you identify and handle breakpoints in responsive design
+- [Compass](http://compass-style.org/) - framework
