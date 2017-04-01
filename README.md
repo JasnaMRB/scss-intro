@@ -91,3 +91,15 @@ Voila!
 - variable names are all lower-case, separating words within a var by a dash (e.g., `$hello-world`)
 - Use Partials to separate variables by category and from the rest of your styles.
 - Use Mixins for blocks of reusable styles.
+
+# Functions
+
+## Built-in
+
+- rgb(x,y,x) = red, green, blue
+- hsl(x,y,z) = hue saturation, light
+- darken(x,y) = color, % to darken
+- lighten(x,y) = color, % to lighten
+- transparentize(x, y,) = color, 0-1 (like 0% to 100%)
+- opacify(x, y) = color, 0-1 (like 0% to 100%)
+
