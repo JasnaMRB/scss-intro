@@ -108,6 +108,18 @@ Voila!
 Put in a `partials` file, e.g., `_functions.scss`.
 - [Strip Unit](https://css-tricks.com/snippets/sass/strip-unit-function/)
 
+# @extend vs @mixin + @include
+
+Under the hood, `@include` from `@mixin` copies style properties to specified selectors. This means you have the same amount of selectors but lots of duplicated properties.
+
+On the other hand, `@extend` copies selectors to be added to specified selector definitions. This means you potentially have duplicate selectors but not duplicated properties.
+
+So objectively, you will typically have a bigger CSS file in the end with `@mixin`s compared to `@extend`. 
+
+However, if you [gzip](https://varvy.com/pagespeed/enable-compression.html) your CSS (which you always should), it's been found that performance is still better with `@mixin` because gzip automatically strips out duplicated properties. This is why many people actually exclusively use `@mixin` and avoid using `@extend` completely.
+
+belly: [mixins vs. extends](https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/)
+
 # @extend quirks
 
 	.cta-button {
@@ -123,7 +135,7 @@ Put in a `partials` file, e.g., `_functions.scss`.
 		.super-cta-button {
 			// This won't work because .cta-button is defined outside media query
 			//@extend .cta-button;
-			
+
 			// This WILL work
 			@extend .foo;
 			font-size: em(20px);
