@@ -103,3 +103,7 @@ Voila!
 - transparentize(x, y,) = color, 0-1 (like 0% to 100%)
 - opacify(x, y) = color, 0-1 (like 0% to 100%)
 
+## Custom
+
+Put in a `partials` file, e.g., `_functions.scss`.
+- [Strip Unit](https://css-tricks.com/snippets/sass/strip-unit-function/)

@@ -3,6 +3,7 @@
  * 	@import "partials/variables", "partials/mixins"
  *
  */
+ @import "partials/functions";
 @import "partials/variables";
 @import "partials/mixins";
 
@@ -14,14 +15,21 @@
 /* applying at root level */
 @include fancy-links;
 
+@include apply-to-ie-6 {
+	body {
+		font {
+			size: 125%;
+		}
+	}
+}
+
 body {
   font-family: $text-font;
   color: $text-color;
   @include large-screens {
-    font-size: 125%;
+    font-size: em(18px);
   }
-  color: rgb(10, 15, 50);
-  background-color: hsl(60, 50%, 100%);
+
 }
 
 h1, h2, h3, h4 {
@@ -31,18 +39,11 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-	@include large-text;}
+	@include large-text;
+}
 
 p {
 	font-family: $text-font;
-}
-
-@include apply-to-ie-6 {
-	body {
-		font {
-			size: 125%;
-		}
-	}
 }
 
 a {
@@ -99,10 +100,23 @@ a {
 	margin-right: auto;
 
   #content {
+  	float: left;
+  	width: 6*$col;
   }
 
   #sidebar {
+  	float: right;
+  	width: 2*$col;
+  	li {
+  		list-style-type: none;
+  		padding: em(16px) em(20px);
+  		border-bottom:  1px dashed #999;
+  		&:hover {
+  			background-color: #efefef;
+  		}
+  	}
   }
+
 }
 
 #footer {
