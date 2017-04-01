@@ -108,6 +108,29 @@ Voila!
 Put in a `partials` file, e.g., `_functions.scss`.
 - [Strip Unit](https://css-tricks.com/snippets/sass/strip-unit-function/)
 
+# @extend quirks
+
+	.cta-button {
+		
+		// This won't work; can't use multiple selectors
+		// @extend .hello .world;
+	}
+
+	@media screen {
+		.foo {
+			color: red;
+		}
+		.super-cta-button {
+			// This won't work because .cta-button is defined outside media query
+			//@extend .cta-button;
+			
+			// This WILL work
+			@extend .foo;
+			font-size: em(20px);
+		}
+	}
+
+
 # Popular Sass Frameworks/Toolkits
 
 - [Susy](http://susy.oddbird.net/) toolkits - flexible, highly customizable, lets you create your own grids

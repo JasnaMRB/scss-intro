@@ -32,6 +32,16 @@ body {
 
 }
 
+.error {
+	color: red;
+}
+
+.critical-error {
+	@extend .error;
+	border: 1px solid red;
+	font-weight: bold;
+}
+
 h1, h2, h3, h4 {
 	font-family: $headline-font;
 	@include box-shadow (2px 0px 4p, #999, 1px 1px 6px $secondary-color);
@@ -53,10 +63,36 @@ a {
 	}
 }
 
+// Not a real CSS selector but can be inserted into other classes
+%highlight {
+	font-style: italic;
+}
+
+.sub-title {
+	@extend %highlight;
+	@extend .foo !optional; // extend selector if exists; else ignore
+	font-size: em(20px);
+}
+
 .warning-button {
 	@include warning;
 	padding: 8px 12px;
 }
+
+.cta-button {
+	// can only have a single element selector
+	@extend .warning-button;
+	// can have multiple @extends
+	@extend .error;
+	@include rounded;
+	font-weight: bold;
+}
+
+.super-cta-button {
+	@extend .cta-button;
+	font-size: em(20px);
+}
+
 
 #header {
 	/* Specify parameter if not the first one) */
