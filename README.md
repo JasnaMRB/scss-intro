@@ -108,7 +108,9 @@ Voila!
 Put in a `partials` file, e.g., `_functions.scss`.
 - [Strip Unit](https://css-tricks.com/snippets/sass/strip-unit-function/)
 
-# @extend vs @mixin + @include
+# Directives
+
+## `@extend` vs `@mixin` + `@include`
 
 Under the hood, `@include` from `@mixin` copies style properties to specified selectors. This means you have the same amount of selectors but lots of duplicated properties.
 
@@ -120,7 +122,7 @@ However, if you [gzip](https://varvy.com/pagespeed/enable-compression.html) your
 
 belly: [mixins vs. extends](https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/)
 
-# @extend quirks
+## `@extend` quirks
 
 	.cta-button {
 		
@@ -143,7 +145,7 @@ belly: [mixins vs. extends](https://tech.bellycard.com/blog/sass-mixins-vs-exten
 	}
 
 
-# `@if`, `@else if`, and `@else`
+## `@if`, `@else if`, and `@else`
 
 	$contrast: hello; // results in @else
 	// $contrast: high -- results in #000
