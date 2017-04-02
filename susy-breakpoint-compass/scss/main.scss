@@ -2,10 +2,16 @@
 @import "normalize";
 @import "susy";
 
+@include border-box-sizing;
+
 $susy: (
 	columns: 16,
-	debug: (image: show)
+	debug: (image: show),
+	global-box-sizing: border-sizing 
 	);
+
+// global-box-sizing includes border, not just padding
+// Global defaults: http://susydocs.oddbird.net/en/latest/settings/?highlight=global%20defaults#global-defaults
 
 .container {
 	height: 100vh; // stretch vertical height to full browser height
@@ -33,6 +39,7 @@ $susy: (
 		height: 20vh;
 		background-color: rgba(100,30,100,0.6);
 		@include span(2 of 10);
+		padding: gutter(10); // gutter() is susy, calculates gutter (space between each of columns)
 
 		&:nth-child(5n) { // CSS3 selector; not susy special
 			@include last; // makes last child float right

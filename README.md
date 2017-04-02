@@ -270,6 +270,7 @@ Generates this CSS:
 # Popular Sass Frameworks/Toolkits
 
 - [Susy](http://susy.oddbird.net/) toolkits - flexible, highly customizable, lets you create your own grids
+	- [Global Defaults](http://susydocs.oddbird.net/en/latest/settings/?highlight=global%20defaults#global-defaults)
 - [Breakpoint](http://breakpoint-sass.com/) tool - helps you identify and handle breakpoints in responsive design
 - [Compass](http://compass-style.org/) - framework
 
