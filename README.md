@@ -243,6 +243,30 @@ Generates this CSS:
 	.large {
 	  font-size: 18px; }
 
+### `@while`
+
+	$j: 8;
+	@while $j >= 2 {
+		.picture-#{$j} {
+			width: $j * 10%;
+		}
+		$j: $j - 2;
+	}
+
+Generates this CSS:
+
+	.picture-8 {
+	  width: 80%; }
+
+	.picture-6 {
+	  width: 60%; }
+
+	.picture-4 {
+	  width: 40%; }
+
+	.picture-2 {
+	  width: 20%; }
+	
 # Popular Sass Frameworks/Toolkits
 
 - [Susy](http://susy.oddbird.net/) toolkits - flexible, highly customizable, lets you create your own grids
