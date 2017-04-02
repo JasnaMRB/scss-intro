@@ -1,4 +1,55 @@
 
 @import "normalize";
 @import "susy";
-@import "compass";
+
+$susy: (
+	columns: 16,
+	debug: (image: show)
+	);
+
+.container {
+	height: 100vh; // stretch vertical height to full browser height
+	// container() is a susy mixin ^
+	@include container();
+	// container(1140px) sets max width; otherwise is responsive
+}
+
+.sidebar-left {
+	height: 80vh; // 80% vertical height
+	background-color: rgba(0, 100, 100, 0.6); // color with 60% opacity
+	@include span(2 of 16); // span 2 columns
+}
+
+.main {
+	height: 80vh;
+	@include span(10 of 16);
+
+	.content {
+		height: 60vh;
+		background-color: rgba(100, 0, 0, 0.6);
+	}
+
+	.teaser {
+		height: 20vh;
+		background-color: rgba(100,30,100,0.6);
+		@include span(2 of 10);
+
+		&:nth-child(5n) { // CSS3 selector; not susy special
+			@include last; // makes last child float right
+		}
+	}
+}
+
+.sidebar-right {
+	height: 80vh;
+	background-color: rgba(100, 100, 30, 0.6);
+	@include span(4 of 16 last); // makes sidebar float right
+}
+
+.footer {
+	height: 20vh;
+	background-color: rgba(0, 30, 100, 0.6);
+	clear: both; // clears floats from above
+	// doesn't need span(16 of 16) since that's default
+
+}
