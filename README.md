@@ -229,7 +229,7 @@ Generates this CSS:
 		}
 	}
 
-Generates this CSS;
+Generates this CSS:
 
 	.tiny {
 	  font-size: 8px; }
