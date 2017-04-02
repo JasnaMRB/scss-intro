@@ -1,7 +1,7 @@
 # SCSS Intro
 
-This is a repo for my SCSS intro course I am taking from Udemy.
-https://www.udemy.com/sasscourse/learn/v4/t/lecture/4455760?start=0
+This is a repo for my [SCSS intro course](https://www.udemy.com/sasscourse/learn/v4/t/lecture/4455760?start=0) I am taking from Udemy.
+
 
 I just want to track my commits and learning progress here.
 
@@ -74,10 +74,11 @@ Voila!
 1. Go to Package Control -> Install Package -> SublimeBuildOnSave
 2. To ignore partials, go to Preferences -> Package Settings -> SublimeBuildOnSave -> User settings
 3. Add this:
-		{
-		    "filename_filter": "(/|\\\\|^)(?!_)(\\w+)\\.(css|js|sass|less|scss)$",
-		    "build_on_save": 1
-		}
+	
+	{
+	    "filename_filter": "(/|\\\\|^)(?!_)(\\w+)\\.(css|js|sass|less|scss)$",
+	    "build_on_save": 1
+	}
 
 # Building Partials
 
@@ -271,9 +272,17 @@ Generates this CSS:
 
 - [Susy](http://susy.oddbird.net/) toolkits - flexible, highly customizable, lets you create your own grids
 	- [Global Defaults](http://susydocs.oddbird.net/en/latest/settings/?highlight=global%20defaults#global-defaults)
+	- `gutter()`
+	- `span()`
 - [Breakpoint](http://breakpoint-sass.com/) tool - helps you identify and handle breakpoints in responsive design
 	- Assumes mobile-first design, so by default everything should be for mobile, then use breakpoints for larger and larger screens
+	- `breakpoint()`
 - [Compass](http://compass-style.org/) - framework
+	- By default with susy `debug`, shows your layout's [vertical rhythm](http://verticalrhythm.org/)
+	- [`text-shadow()`](http://compass-style.org/reference/compass/css3/text-shadow/) handles cross-browser shadowing!
+	- [`box-shadow()`](http://compass-style.org/reference/compass/css3/box_shadow/) same!
+	- [`border-radius()`](http://compass-style.org/reference/compass/css3/border_radius/) yeah!
+	- ...and [more](http://compass-style.org/reference/compass/css3/)!
 
 ## Installing
 
