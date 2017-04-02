@@ -266,9 +266,20 @@ Generates this CSS:
 
 	.picture-2 {
 	  width: 20%; }
-	
+
 # Popular Sass Frameworks/Toolkits
 
 - [Susy](http://susy.oddbird.net/) toolkits - flexible, highly customizable, lets you create your own grids
 - [Breakpoint](http://breakpoint-sass.com/) tool - helps you identify and handle breakpoints in responsive design
 - [Compass](http://compass-style.org/) - framework
+
+## Installing
+
+`gem install susy`
+`gem install breakpoint`
+`gem install compass`
+
+Install Compass via Sublime Text Package Control.*
+
+*If you get an error where the console claims that Compass can't be found, you may need to fix the path in your Compass.sublime-build file (Users/<username>/Library/Application Support/Sublime Text 3/Packages/Compass/Compass.sublime-build). My problem was due to my system using rbenv to manage ruby stuff. I found my solution [here on SO](http://stackoverflow.com/questions/13712801/how-to-configure-compass-build-with-rbenv-in-sublime-text-2/13712802#13712802).
+
