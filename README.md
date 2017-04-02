@@ -167,6 +167,82 @@ belly: [mixins vs. extends](https://tech.bellycard.com/blog/sass-mixins-vs-exten
 	}
 
 This kind of stuff is great to use for multiple themes of a stylesheet, e.g., "Light", "Dark", "Default", "ClientX", "ClientY", "Ocean".
+
+## Loops
+
+### `@for`
+
+	// from 1 to 6 is exclusive 6
+	@for $i from 1 through 6 {
+		.col-#{$i} {
+			width: $i * 2em;
+		}
+	}
+
+Generates this CSS:
+
+	.col-1 {
+	  width: 2em; }
+
+	.col-2 {
+	  width: 4em; }
+
+	.col-3 {
+	  width: 6em; }
+
+	.col-4 {
+	  width: 8em; }
+
+	.col-5 {
+	  width: 10em; }
+
+	.col-6 {
+	  width: 12em; }
+
+### `@each`
+
+	
+	@each $speaker in $speakers {
+		.#{$speaker}-profile {
+			background-image: url('/img/#{$speaker}.png');
+		}
+	}
+
+Generates this CSS:
+
+	.bob-banker-profile {
+	  background-image: url("/img/bob-banker.png"); }
+
+	.patty-plume-profile {
+	  background-image: url("/img/patty-plume.png"); }
+
+	.sandra-smith-profile {
+	  background-image: url("/img/sandra-smith.png"); }
+
+#### With a Map
+
+	$font-sizes: (tiny: 8px, small: 11px, medium: 13px, large: 18px);
+
+	@each $name, $size in $font-sizes {
+		.#{$name} {
+			font-size: $size;
+		}
+	}
+
+Generates this CSS;
+
+	.tiny {
+	  font-size: 8px; }
+
+	.small {
+	  font-size: 11px; }
+
+	.medium {
+	  font-size: 13px; }
+
+	.large {
+	  font-size: 18px; }
+
 # Popular Sass Frameworks/Toolkits
 
 - [Susy](http://susy.oddbird.net/) toolkits - flexible, highly customizable, lets you create your own grids
