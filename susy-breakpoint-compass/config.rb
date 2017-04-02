@@ -1,6 +1,6 @@
-#require 'susy'
-#require 'breakpoint'
-#require 'compass'
+require 'susy'
+require 'breakpoint'
+require 'compass'
 
 preferred_syntax = :scss
 http_path = '/'
