@@ -1,6 +1,7 @@
 
 @import "normalize";
 @import "susy";
+@import "breakpoint";
 
 @include border-box-sizing;
 
@@ -10,11 +11,12 @@ $susy: (
 	global-box-sizing: border-sizing 
 	);
 
+$medium-screen: 720px;
+
 // global-box-sizing includes border, not just padding
 // Global defaults: http://susydocs.oddbird.net/en/latest/settings/?highlight=global%20defaults#global-defaults
 
 .container {
-	height: 100vh; // stretch vertical height to full browser height
 	// container() is a susy mixin ^
 	@include container();
 	// container(1140px) sets max width; otherwise is responsive
@@ -23,12 +25,20 @@ $susy: (
 .sidebar-left {
 	height: 80vh; // 80% vertical height
 	background-color: rgba(0, 100, 100, 0.6); // color with 60% opacity
-	@include span(2 of 16); // span 2 columns
+	display: none;
+
+	@include breakpoint($medium-screen) {
+		display: block;
+		@include span(2 of 16); // span 2 columns
+	}
 }
 
 .main {
 	height: 80vh;
-	@include span(10 of 16);
+
+	@include breakpoint($medium-screen) {
+		@include span(10 of 16);
+	}
 
 	.content {
 		height: 60vh;
@@ -38,11 +48,14 @@ $susy: (
 	.teaser {
 		height: 20vh;
 		background-color: rgba(100,30,100,0.6);
-		@include span(2 of 10);
 		padding: gutter(10); // gutter() is susy, calculates gutter (space between each of columns)
 
-		&:nth-child(5n) { // CSS3 selector; not susy special
-			@include last; // makes last child float right
+		@include span(10 of 10);
+		@include breakpoint($medium-screen) {
+			@include span(2 of 10);
+			&:nth-child(5n) { // CSS3 selector; not susy special
+				@include last; // makes last child float right
+			}
 		}
 	}
 }
@@ -50,7 +63,11 @@ $susy: (
 .sidebar-right {
 	height: 80vh;
 	background-color: rgba(100, 100, 30, 0.6);
-	@include span(4 of 16 last); // makes sidebar float right
+	clear: both;
+	@include breakpoint($medium-screen) {
+		clear: none;
+		@include span(4 of 16 last); // makes sidebar float right
+	}
 }
 
 .footer {

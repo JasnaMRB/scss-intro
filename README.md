@@ -272,6 +272,7 @@ Generates this CSS:
 - [Susy](http://susy.oddbird.net/) toolkits - flexible, highly customizable, lets you create your own grids
 	- [Global Defaults](http://susydocs.oddbird.net/en/latest/settings/?highlight=global%20defaults#global-defaults)
 - [Breakpoint](http://breakpoint-sass.com/) tool - helps you identify and handle breakpoints in responsive design
+	- Assumes mobile-first design, so by default everything should be for mobile, then use breakpoints for larger and larger screens
 - [Compass](http://compass-style.org/) - framework
 
 ## Installing
